@@ -6,6 +6,7 @@ class Character {
 	protected hp : { current : number };
 	protected mp : { current : number };
 	protected xp : { current : number };
+	protected position : { x : number, y : number, z ?: number };
 	protected abilities : Object[];
 	protected magic : Object[];
 	protected inventory : Object[];
@@ -20,16 +21,16 @@ class Character {
 		return this.class[this.level][name];
 	}
 
-	private drainer (type : string, points : number) {
+	protected drainer (type : string, points : number) {
 		return this[type].current = maxMin(
 			this[type].current -= points
 		);
 	}
 
-	private gainer (type, points) {
+	protected gainer (type, points) {
 		return this[type].current = maxMin(
 			this[type].current += points,
-			{ max: this.levelProp(type) }
+			{ max: this.levelProp(type).max }
 		);
 	}
 

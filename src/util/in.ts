@@ -1,9 +1,9 @@
-const $in = (value : any, array : any[]) : boolean => {
+const isIn = (value : any, array : any[]) : boolean => {
 	return array.indexOf(value) !== -1;
 }
 
-const $nin = (value : any, array : any[]) : boolean => {
-	return !$in(value, array);
+const isNin = (value : any, array : any[]) : boolean => {
+	return !isIn(value, array);
 }
 
-export { $in, $nin };
+export { isIn, isNin };
