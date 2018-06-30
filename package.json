@@ -1,0 +1,24 @@
+{
+  "name": "yuka",
+  "version": "0.1.0",
+  "description": "Game development backend",
+  "main": "dist/yuka.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuka/yuka.git"
+  },
+  "keywords": [
+    "game",
+    "development",
+    "backend"
+  ],
+  "author": "Muthu Kumar <@MKRhere> (https://mkr.pw)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yuka/yuka/issues"
+  },
+  "homepage": "https://github.com/yuka/yuka#readme"
+}
