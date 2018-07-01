@@ -16,9 +16,11 @@
     "backend"
   ],
   "author": "Muthu Kumar <@MKRhere> (https://mkr.pw)",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/yuka/yuka/issues"
   },
-  "homepage": "https://github.com/yuka/yuka#readme"
+  "homepage": "https://github.com/yuka/yuka#readme",
+  "dependencies": {
+    "@codefeathers/infinity": "^0.5.0"
+  }
 }

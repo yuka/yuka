@@ -14,7 +14,7 @@ class Character {
 	protected class : Object;
 
 	constructor (obj) {
-		copyTo(obj, this);
+		copyTo(this, obj);
 	}
 
 	levelProp (name : string) : any {
@@ -27,30 +27,30 @@ class Character {
 		);
 	}
 
-	protected gainer (type, points) {
+	protected gainer (type : string, points : number) {
 		return this[type].current = maxMin(
 			this[type].current += points,
 			{ max: this.levelProp(type).max }
 		);
 	}
 
-	drainHp (points) {
+	drainHp (points : number) {
 		return this.drainer('hp', points);
 	}
 
-	drainMp (points) {
+	drainMp (points : number) {
 		return this.drainer('mp', points);
 	}
 
-	gainHp (points) {
+	gainHp (points : number) {
 		return this.gainer('hp', points);
 	}
 
-	gainMp (points) {
+	gainMp (points : number) {
 		return this.gainer('mp', points);
 	}
 
-	gainXp (points) {
+	gainXp (points : number) {
 		return this.gainer('xp', points);
 	}
 }

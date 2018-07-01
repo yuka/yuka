@@ -1,3 +1,4 @@
-import Character from './collections/character/index';
+import Character from './collections/character/core';
+import CharacterClass from './collections/class/core';
 
-export { Character };
+export { Character, CharacterClass };
