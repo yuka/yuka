@@ -21,3 +21,8 @@ const Knight = new CharacterClass('Knight', baseLevel, levelFunction, 10);
 
 // Let's creaate a new Knight character!
 const Hero = new Character({name: 'Jaime', class: Knight});
+
+// Hero took damage!
+Hero.drainHp(5);
+
+console.log(Hero);
