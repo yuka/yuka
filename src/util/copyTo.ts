@@ -1,7 +1,11 @@
-const copyTo = (target : Object, source : Object) : Object => {
+interface Options {
+	override ?: boolean;
+}
+
+const copyTo = (target : Object, source : Object, options : Options = {}) : Object => {
 	const keys = [ ...Object.getOwnPropertyNames(source), ...Object.getOwnPropertySymbols(source) ];
 	keys.forEach((key : string | symbol) : void => {
-		target[key] = source[key];
+		if(!target[key] || options.override) target[key] = source[key];
 	});
 	return target;
 }
