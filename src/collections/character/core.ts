@@ -1,8 +1,14 @@
 import copyTo from '../../util/copyTo';
 import maxMin from '../../util/maxMin';
+import CharacterClass from '../class/core';
+import { validator, assignDefaults } from './util';
 
 class Character {
-	protected name : string;
+	name : string;
+	level : number;
+	class : CharacterClass;
+	statuses : string[];
+
 	protected hp : { current : number };
 	protected mp : { current : number };
 	protected xp : { current : number };
@@ -10,15 +16,15 @@ class Character {
 	protected abilities : Object[];
 	protected magic : Object[];
 	protected inventory : Object[];
-	protected level : number;
-	protected class : Object;
 
-	constructor (obj) {
+	constructor (obj : Object) {
+		validator(obj, (err : string) => { if(err) throw new Error(err) });
 		copyTo(this, obj);
+		assignDefaults(this);
 	}
 
 	levelProp (name : string) : any {
-		return this.class[this.level][name];
+		return this.class.levels[this.level][name];
 	}
 
 	protected drainer (type : string, points : number) {
