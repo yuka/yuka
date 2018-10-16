@@ -1,12 +1,18 @@
 dependencies:
   '@codefeathers/infinity': 0.5.0
+  '@types/node': 10.5.2
 packages:
   /@codefeathers/infinity/0.5.0:
     dev: false
     resolution:
       integrity: sha512-smTvSFyMYrK8hCSbV0pZ+X7DV0qNc6IKrdQXwnjc0yIWQTp4tX9ckKHDoGmMdbQ2HnARgbCzBCVfGMFDqZBppQ==
+  /@types/node/10.5.2:
+    dev: false
+    resolution:
+      integrity: sha512-m9zXmifkZsMHZBOyxZWilMwmTlpC8x5Ty360JKTiXvlXZfBWYpsg9ZZvP/Ye+iZUh+Q+MxDLjItVTWIsfwz+8Q==
 registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 8
 shrinkwrapVersion: 3
 specifiers:
   '@codefeathers/infinity': ^0.5.0
+  '@types/node': ^10.5.2

@@ -1,4 +1,4 @@
-import Character from './collections/character/core';
-import CharacterClass from './collections/class/core';
+import Character from './components/character/core';
+import CharacterClass from './components/class/core';
 
 export { Character, CharacterClass };

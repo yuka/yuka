@@ -1,5 +1,5 @@
 import { Character, CharacterClass } from '../src/yuka';
-import { Level } from '../src/collections/class/core';
+import { Level } from '../src/components/class/core';
 
 // Level incrementor
 const levelFunction = (prev : Level) : Level => ({
@@ -17,10 +17,18 @@ const baseLevel = {
 };
 
 // Let's create a new CharacterClass!
-const Knight = new CharacterClass('Knight', baseLevel, levelFunction, 10);
+const Knight = new CharacterClass({
+	name: 'Knight',
+	baseLevel,
+	levelFunction,
+	maxLevel: 10,
+});
 
 // Let's creaate a new Knight character!
-const Hero = new Character({name: 'Jaime', class: Knight});
+const Hero = new Character({
+	name: 'Jaime',
+	class: Knight,
+});
 
 // Hero took damage!
 Hero.drainHp(5);
