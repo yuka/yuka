@@ -99,6 +99,14 @@ export const create = ({ map }: { map: string[][] }) => {
 		},
 
 		client: {
+			get: (resource: "map") => {
+				switch (resource) {
+					case "map":
+						return map;
+					default:
+						throw new Error("Client requested unknown resource");
+				}
+			},
 			emit: (name: "move", event: any) => {
 				return Boolean(
 					subscribers[name]
