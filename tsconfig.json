@@ -1,9 +1,19 @@
 {
 	"compilerOptions": {
+		"target": "esnext",
 		"module": "commonjs",
-		"outDir": "./dist",
-		"allowJs": true,
-		"target": "es6"
+		"sourceMap": true,
+		"outDir": "dist",
+		"noUnusedLocals": true,
+		"resolveJsonModule": true,
+		"esModuleInterop": true,
+		"strict": true
 	},
-	"include": ["./src/**/*", "./sample/**/*"]
+	"exclude": [ "node_modules" ],
+	"include": [
+		"global.d.ts",
+		"thirdparty.d.ts",
+		"src/index.ts",
+		"sample/game.ts"
+	]
 }

@@ -1,4 +1,5 @@
-import Character from './components/character/core';
-import CharacterClass from './components/class/core';
+import * as Character from "./components/Character";
+import * as Class from "./components/Class";
+import * as Game from "./components/Game";
 
-export { Character, CharacterClass };
+export { Character, Class, Game };

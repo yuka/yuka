@@ -1,0 +1,16 @@
+dependencies:
+  '@codefeathers/infinity': 0.5.1
+  '@types/node': 10.14.10
+lockfileVersion: 5.1
+packages:
+  /@codefeathers/infinity/0.5.1:
+    dev: false
+    resolution:
+      integrity: sha512-F3/uXJuK/pA2Dx4Ft65qseIxyVY15alaY44NOLN56/Z+u4zXrAmTFhGfBNuIWEixuV0S+BLZP4Gd+zpQO6gcrw==
+  /@types/node/10.14.10:
+    dev: false
+    resolution:
+      integrity: sha512-V8wj+w2YMNvGuhgl/MA5fmTxgjmVHVoasfIaxMMZJV6Y8Kk+Ydpi1z2whoShDCJ2BuNVoqH/h1hrygnBxkrw/Q==
+specifiers:
+  '@codefeathers/infinity': ^0.5.0
+  '@types/node': ^10.5.2

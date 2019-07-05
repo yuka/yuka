@@ -1,36 +1,35 @@
-import { Character, CharacterClass } from '../src/yuka';
-import { Level } from '../src/components/class/core';
+import { Character, Class, Game } from '../src/Yuka';
 
-// Level incrementor
-const levelFunction = (prev : Level) : Level => ({
-	id : prev.id + 1,
-	hp : { max : Math.floor(prev.hp.max * 1.2) },
-	mp : { max : Math.floor(prev.mp.max * 1.2) },
-	xp : { max : Math.floor(prev.xp.max * 1.2) },
-})
-
-const baseLevel = {
-	id : 1,
-	hp : { max: 10 },
-	mp : { max : 20 },
-	xp : { max : 200 },
+const KnightBaseLevel = {
+	level: 1,
+	Drainable: {
+		hp: 100,
+		mp: 0,
+		xp: Infinity,
+	},
+	Skills: [],
+	Traits: [],
 };
 
-// Let's create a new CharacterClass!
-const Knight = new CharacterClass({
-	name: 'Knight',
-	baseLevel,
-	levelFunction,
-	maxLevel: 10,
+const map = [
+	[ "grass", "tree", "grass", "grass" ],
+	[ "grass", "grass", "tree", "grass" ],
+	[ "grass", "tree", "grass", "grass" ],
+	[ "grass", "grass", "grass", "grass" ],
+];
+
+const game = Game.create({ map });
+
+const Knight = Class.create(KnightBaseLevel);
+const player = Character.create(Knight, "Jaime Lannister");
+
+game.add(player, [ 2, 2 ]);
+game.loop.start();
+
+game.controls.on("move", (e: any) => {
+	game.move(player, e);
 });
 
-// Let's creaate a new Knight character!
-const Hero = new Character({
-	name: 'Jaime',
-	class: Knight,
-});
+// --
 
-// Hero took damage!
-Hero.drainHp(5);
-
-console.log(Hero);
+game.client.emit("move", [ 1, 1 ]);
